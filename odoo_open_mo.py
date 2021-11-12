@@ -35,7 +35,7 @@ sales_to_check_mo = []
 orginal_sales_order = models.execute_kw(db, uid, password,
                                         'sale.order', 'search_read',
                                         [[['state', '!=', 'cancel'],
-                                            ['state', '!=', 'draft']]],{'limit': 1})
+                                            ['state', '!=', 'draft']]])
 for sales in orginal_sales_order:
     print(sales['name'])
     sales_to_check_mo.append(sales['name'])
